@@ -1,0 +1,516 @@
+// ### Colors
+
+// ### Theme blue
+
+// #### Backgrounds
+
+$desaturated-blue-main : hsl(222, 26%, 31%); // main background
+$desaturated-blue-keypad : hsl(223, 31%, 20%); // toggle background, keypad background
+$desaturated-blue-screen: hsl(224, 36%, 15%); // screen background
+
+// #### Keys
+
+$desatureted-blue-key: hsl(225, 21%, 49%); // key background
+$desatureted-blue-key-hover: hsl(225, 21%, 59%); // key background
+$desaturated-blue-key-shadow: hsl(224, 28%, 35%); // key shadow
+$desaturated-blue-key-shadow-hover: hsl(224, 28%, 40%); // key shadow
+
+$desaturated-blue-red: hsl(6, 63%, 50%); // key background, toggle
+$desaturated-blue-red-hover: hsl(6, 63%, 60%); // key background, toggle
+$desaturated-blue-dark-red: hsl(6, 70%, 34%); // key shadow
+$desaturated-blue-dark-red-hover: hsl(6, 70%, 39%); // key shadow
+
+$light-grayish-orange: hsl(30, 25%, 89%); // key background
+$light-grayish-orange-hover: hsl(30, 25%, 99%); // key hover background
+$grayish-orange: hsl(28, 16%, 65%); // key shadow
+$grayish-orange-hover: hsl(28, 16%, 70%); // key hover shadow
+
+// #### Text
+
+$dark-grayish-blue: hsl(221, 14%, 31%);
+$white: hsl(0, 0, 100%);
+
+// ### Theme light
+
+// #### Backgrounds
+
+$light-gray: hsl(0, 0%, 90%); // (main background)
+$grayish-red: hsl(0, 5%, 81%); // (toggle background, keypad background)
+$very-light-gray: hsl(0, 0%, 93%); // (screen background)
+
+// #### Keys
+
+$dark-cyan: hsl(185, 42%, 37%); // (key background)
+$dark-cyan-hover: hsl(185, 42%, 47%); // (key background)
+$very-dark-cyan: hsl(185, 58%, 25%); // (key shadow)
+$very-dark-cyan-hover: hsl(185, 58%, 30%); // (key shadow)
+
+$orange: hsl(25, 98%, 40%); // (key background, toggle)
+$orange-hover: hsl(25, 98%, 50%); // (key background, toggle)
+$dark-orange: hsl(25, 99%, 27%); // (key shadow)
+$dark-orange-hover: hsl(25, 99%, 33%); // (key shadow)
+
+$light-grayish-yellow: hsl(45, 7%, 89%); // (key background)
+$light-grayish-yellow-hover: hsl(45, 7%, 99%); // (key background)
+$dark-grayish-orange: hsl(35, 11%, 61%); //  (key shadow)
+$dark-grayish-orange-hover: hsl(35, 11%, 66%); //  (key shadow)
+
+// #### Text
+
+$very-dark-grayish-yellow: hsl(60, 10%, 19%);
+
+
+// ### Theme violet
+
+// #### Backgrounds
+
+$darkest-violet: hsl(268, 75%, 9%); // (main background)
+$dark-violet: hsl(268, 71%, 12%); // (toggle background, keypad background, screen background)
+
+// #### Keys
+
+$violet: hsl(281, 89%, 26%); // (key background)
+$violet-hover: hsl(281, 89%, 36%); // (key background)
+$vivid-magenta: hsl(285, 91%, 52%); // (key shadow)
+$vivid-magenta-hover: hsl(285, 91%, 57%); // (key shadow)
+
+$pure-cyan: hsl(176, 100%, 44%); // (key background, toggle)
+$pure-cyan-hover: hsl(176, 100%, 54%); // (key background, toggle)
+$soft-cyan: hsl(177, 92%, 70%); // (key shadow)
+$soft-cyan-hover: hsl(177, 92%, 75%); // (key shadow)
+
+$very-dark-violet: hsl(268, 47%, 21%); // (key background)
+$very-dark-violet-hover: hsl(268, 47%, 31%); // (key background)
+$dark-magenta: hsl(290, 70%, 36%); // (key shadow)
+$dark-magenta-hover: hsl(290, 70%, 41%); // (key shadow)
+
+// #### Text
+
+$light-yellow: hsl(52, 100%, 62%);
+$very-dark-blue: hsl(198, 20%, 13%);
+
+
+
+
+
+
+@font-face {
+    font-family: "League Spartan";
+    src: url(../font/LeagueSpartan-Medium.ttf);
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: "League Spartan";
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: inherit;
+}
+
+.main-container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.blue {
+    background: $desaturated-blue-main;
+    color: $white;
+
+    .calc-info {
+        .switcher {
+            background-color: $desaturated-blue-keypad;
+
+            .input-wrapper {
+                input[type="radio"]:checked {
+                    background: $desaturated-blue-red;
+                }
+            }
+        }
+    }
+
+    .calc-screen {
+        background: $desaturated-blue-screen;
+    }
+
+    .calc-keypad {
+        background: $desaturated-blue-keypad;
+
+        .button-groups {
+            .btn {
+                color: $dark-grayish-blue;
+                background: $light-grayish-orange;
+                box-shadow: 0 .4rem .1rem $grayish-orange;
+
+                &:hover {
+                    background: $light-grayish-orange-hover;
+                    box-shadow: 0 .35rem .1rem $grayish-orange-hover;
+                }
+
+                &:active {
+                    background: $light-grayish-orange-hover;
+                    box-shadow: 0 .2rem .1rem $grayish-orange-hover;
+                }
+
+            }
+
+            .btn-delete,
+            .btn-reset {
+                background: $desatureted-blue-key;
+                box-shadow: 0 .4rem .1rem $desaturated-blue-key-shadow;
+
+                &:hover {
+                    background: $desatureted-blue-key-hover;
+                    box-shadow: 0 .35rem .1rem $desaturated-blue-key-shadow-hover;
+                }
+
+                &:active {
+                    background: $desatureted-blue-key-hover;
+                    box-shadow: 0 .2rem .1rem $desaturated-blue-key-shadow-hover;
+                }
+            }
+
+            .btn-result {
+                background: $desaturated-blue-red;
+                color: $white;
+                box-shadow: 0 .4rem .1rem $desaturated-blue-dark-red;
+
+                &:hover {
+                    background: $desaturated-blue-red-hover;
+                    box-shadow: 0 .35rem .1rem $desaturated-blue-dark-red-hover;
+                }
+
+                &:active {
+                    background: $desatureted-blue-key-hover;
+                    box-shadow: 0 .2rem .1rem $desaturated-blue-dark-red-hover;
+                }
+            }
+        }
+    }
+}
+
+.light {
+    background: $light-gray;
+    color: $very-dark-grayish-yellow;
+
+    .calc-info {
+        .switcher {
+            background-color: $grayish-red;
+
+            .input-wrapper {
+                input[type="radio"]:checked {
+                    background: $orange;
+                }
+            }
+        }
+    }
+
+    .calc-screen {
+        background: $very-light-gray;
+    }
+
+    .calc-keypad {
+        background: $grayish-red;
+
+        .button-groups {
+
+            .btn {
+                background: $light-grayish-yellow;
+                box-shadow: 0 .4rem .1rem $dark-grayish-orange;
+
+                &:hover {
+                    background: $light-grayish-yellow-hover;
+                    box-shadow: 0 .35rem .1rem $dark-grayish-orange-hover;
+                }
+
+                &:active {
+                    background: $light-grayish-yellow-hover;
+                    box-shadow: 0 .2rem .1rem $dark-grayish-orange-hover;
+                }
+            }
+
+            .btn-delete,
+            .btn-reset {
+                background: $dark-cyan;
+                box-shadow: 0 .4rem .1rem $very-dark-cyan;
+
+                &:hover {
+                    background: $dark-cyan-hover;
+                    box-shadow: 0 .35rem .1rem $very-dark-cyan-hover;
+                }
+
+                &:active {
+                    background: $dark-cyan-hover;
+                    box-shadow: 0 .2rem .1rem $very-dark-cyan-hover;
+                }
+            }
+
+            .btn-result {
+                background: $orange;
+                color: $white;
+                box-shadow: 0 .4rem .1rem $dark-orange;
+
+                &:hover {
+                    background: $orange-hover;
+                    box-shadow: 0 .35rem .1rem $dark-orange-hover;
+                }
+
+                &:active {
+                    background: $orange-hover;
+                    box-shadow: 0 .2rem .1rem $dark-orange-hover;
+                }
+            }
+        }
+    }
+}
+
+.violet {
+    background: $darkest-violet;
+    color: $light-yellow;
+
+    .calc-info {
+        .switcher {
+            background-color: $dark-violet;
+
+            .input-wrapper {
+                input[type="radio"]:checked {
+                    background: $pure-cyan;
+                }
+            }
+        }
+    }
+
+    .calc-screen {
+        background: $dark-violet;
+    }
+
+    .calc-keypad {
+        background: $dark-violet;
+
+        .button-groups {
+
+            .btn {
+                background: $very-dark-violet;
+                box-shadow: 0 .3rem .1rem $dark-magenta;
+
+                &:hover {
+                    background: $very-dark-violet-hover;
+                    box-shadow: 0 .35rem .1rem $dark-magenta-hover;
+                }
+
+                &:active {
+                    background: $very-dark-violet-hover;
+                    box-shadow: 0 .2rem .1rem $dark-magenta-hover;
+                }
+            }
+
+            .btn-delete,
+            .btn-reset {
+                background: $violet;
+                box-shadow: 0 .4rem .1rem $dark-magenta;
+
+                &:hover {
+                    background: $violet-hover;
+                    box-shadow: 0 .35rem .1rem $dark-magenta-hover;
+                }
+
+                &:active {
+                    background: $violet-hover;
+                    box-shadow: 0 .2rem .1rem $dark-magenta-hover;
+                }
+            }
+
+            .btn-result {
+                background: $pure-cyan;
+                color: $very-dark-blue;
+                box-shadow: 0 .4rem .1rem $soft-cyan;
+
+                &:hover {
+                    background: $pure-cyan-hover;
+                    box-shadow: 0 .35rem .1rem $soft-cyan-hover;
+                }
+
+                &:active {
+                    background: $pure-cyan-hover;
+                    box-shadow: 0 .2rem .1rem $soft-cyan-hover;
+                }
+            }
+        }
+
+    }
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .calc-container {
+
+        .calc-info {
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+            margin-block: 5rem 3rem;
+
+            &__text {
+                font-size: 2.2rem;
+            }
+
+            &__toggle {
+                flex-grow: 1;
+                width: 100%;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+
+                figcaption {
+                    font-size: .8rem;
+                    margin-right: 2.5em;
+                    text-transform: uppercase;
+                }
+
+                .switcher {
+                    display: flex;
+                    border-radius: 2rem;
+                    padding: .5rem;
+                    border: none;
+
+                    .input-wrapper {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        position: relative;
+
+                        &:nth-child(2) {
+                            input[type="radio"] {
+                                margin-inline: .5rem;
+                            }
+                        }
+
+                        input[type="radio"] {
+                            width: 1.2rem;
+                            height: 1.2rem;
+                            appearance: none;
+                            -webkit-appearance: none;
+                            background: transparent;
+                            border-radius: 50%;
+                            cursor: pointer;
+
+                            &:focus-visible {
+                                outline: none;
+                                outline-offset: 0;
+                            }
+                        }
+
+                        label {
+                            position: absolute;
+                            top: -2em;
+                            padding: .2em;
+                            cursor: pointer;
+                        }
+
+                    }
+
+                }
+
+            }
+
+        }
+
+        .calc-screen {
+            padding: 3rem;
+            border-radius: .7rem;
+            font-size: 3.8rem;
+
+            input {
+                outline: none;
+                border: none;
+                color: inherit;
+                font-size: inherit;
+                line-height: 3.8rem;
+                background: inherit;
+                width: 100%;
+                text-align: end;
+                padding: 0;
+
+            }
+        }
+
+        .calc-keypad {
+            padding: 3rem;
+            margin-top: 2rem;
+            border-radius: .7rem;
+            display: grid;
+            grid-template-rows: repeat(4, 1fr);
+            gap: 2.2rem;
+
+            .button-groups {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 2.4rem;
+
+                &:last-child {
+                    grid-template-columns: 1fr 1fr;
+                }
+
+                button {
+                    font-size: 2.8rem;
+                    font-weight: 700;
+                    color: inherit;
+                    border: none;
+                    border-radius: .5rem;
+                    font-variant: small-caps;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: .4em;
+                    cursor: pointer;
+
+                    &:hover {
+                        transform: translateY(.05rem);
+                    }
+
+                    &:active {
+                        transform: translateY(.2rem);
+                    }
+                }
+
+                .btn-delete,
+                .btn-reset {
+                    color: $white;
+                }
+            }
+        }
+    }
+
+}
+
+
+
+footer {
+    margin-top: 3rem;
+
+    .attribution {
+        font-size: 1.1rem;
+        text-align: center;
+        padding: 1.4em;
+    }
+}

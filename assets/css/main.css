@@ -1,0 +1,331 @@
+@font-face {
+  font-family: "League Spartan";
+  src: url(../font/LeagueSpartan-Medium.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "League Spartan";
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+}
+
+.main-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.blue {
+  background: hsl(222deg, 26%, 31%);
+  color: hsl(0deg, 0%, 100%);
+}
+.blue .calc-info .switcher {
+  background-color: hsl(223deg, 31%, 20%);
+}
+.blue .calc-info .switcher .input-wrapper input[type=radio]:checked {
+  background: hsl(6deg, 63%, 50%);
+}
+.blue .calc-screen {
+  background: hsl(224deg, 36%, 15%);
+}
+.blue .calc-keypad {
+  background: hsl(223deg, 31%, 20%);
+}
+.blue .calc-keypad .button-groups .btn {
+  color: hsl(221deg, 14%, 31%);
+  background: hsl(30deg, 25%, 89%);
+  box-shadow: 0 0.4rem 0.1rem hsl(28deg, 16%, 65%);
+}
+.blue .calc-keypad .button-groups .btn:hover {
+  background: hsl(30deg, 25%, 99%);
+  box-shadow: 0 0.35rem 0.1rem hsl(28deg, 16%, 70%);
+}
+.blue .calc-keypad .button-groups .btn:active {
+  background: hsl(30deg, 25%, 99%);
+  box-shadow: 0 0.2rem 0.1rem hsl(28deg, 16%, 70%);
+}
+.blue .calc-keypad .button-groups .btn-delete,
+.blue .calc-keypad .button-groups .btn-reset {
+  background: hsl(225deg, 21%, 49%);
+  box-shadow: 0 0.4rem 0.1rem hsl(224deg, 28%, 35%);
+}
+.blue .calc-keypad .button-groups .btn-delete:hover,
+.blue .calc-keypad .button-groups .btn-reset:hover {
+  background: hsl(225deg, 21%, 59%);
+  box-shadow: 0 0.35rem 0.1rem hsl(224deg, 28%, 40%);
+}
+.blue .calc-keypad .button-groups .btn-delete:active,
+.blue .calc-keypad .button-groups .btn-reset:active {
+  background: hsl(225deg, 21%, 59%);
+  box-shadow: 0 0.2rem 0.1rem hsl(224deg, 28%, 40%);
+}
+.blue .calc-keypad .button-groups .btn-result {
+  background: hsl(6deg, 63%, 50%);
+  color: hsl(0deg, 0%, 100%);
+  box-shadow: 0 0.4rem 0.1rem hsl(6deg, 70%, 34%);
+}
+.blue .calc-keypad .button-groups .btn-result:hover {
+  background: hsl(6deg, 63%, 60%);
+  box-shadow: 0 0.35rem 0.1rem hsl(6deg, 70%, 39%);
+}
+.blue .calc-keypad .button-groups .btn-result:active {
+  background: hsl(225deg, 21%, 59%);
+  box-shadow: 0 0.2rem 0.1rem hsl(6deg, 70%, 39%);
+}
+
+.light {
+  background: hsl(0deg, 0%, 90%);
+  color: hsl(60deg, 10%, 19%);
+}
+.light .calc-info .switcher {
+  background-color: hsl(0deg, 5%, 81%);
+}
+.light .calc-info .switcher .input-wrapper input[type=radio]:checked {
+  background: hsl(25deg, 98%, 40%);
+}
+.light .calc-screen {
+  background: hsl(0deg, 0%, 93%);
+}
+.light .calc-keypad {
+  background: hsl(0deg, 5%, 81%);
+}
+.light .calc-keypad .button-groups .btn {
+  background: hsl(45deg, 7%, 89%);
+  box-shadow: 0 0.4rem 0.1rem hsl(35deg, 11%, 61%);
+}
+.light .calc-keypad .button-groups .btn:hover {
+  background: hsl(45deg, 7%, 99%);
+  box-shadow: 0 0.35rem 0.1rem hsl(35deg, 11%, 66%);
+}
+.light .calc-keypad .button-groups .btn:active {
+  background: hsl(45deg, 7%, 99%);
+  box-shadow: 0 0.2rem 0.1rem hsl(35deg, 11%, 66%);
+}
+.light .calc-keypad .button-groups .btn-delete,
+.light .calc-keypad .button-groups .btn-reset {
+  background: hsl(185deg, 42%, 37%);
+  box-shadow: 0 0.4rem 0.1rem hsl(185deg, 58%, 25%);
+}
+.light .calc-keypad .button-groups .btn-delete:hover,
+.light .calc-keypad .button-groups .btn-reset:hover {
+  background: hsl(185deg, 42%, 47%);
+  box-shadow: 0 0.35rem 0.1rem hsl(185deg, 58%, 30%);
+}
+.light .calc-keypad .button-groups .btn-delete:active,
+.light .calc-keypad .button-groups .btn-reset:active {
+  background: hsl(185deg, 42%, 47%);
+  box-shadow: 0 0.2rem 0.1rem hsl(185deg, 58%, 30%);
+}
+.light .calc-keypad .button-groups .btn-result {
+  background: hsl(25deg, 98%, 40%);
+  color: hsl(0deg, 0%, 100%);
+  box-shadow: 0 0.4rem 0.1rem hsl(25deg, 99%, 27%);
+}
+.light .calc-keypad .button-groups .btn-result:hover {
+  background: hsl(25deg, 98%, 50%);
+  box-shadow: 0 0.35rem 0.1rem hsl(25deg, 99%, 33%);
+}
+.light .calc-keypad .button-groups .btn-result:active {
+  background: hsl(25deg, 98%, 50%);
+  box-shadow: 0 0.2rem 0.1rem hsl(25deg, 99%, 33%);
+}
+
+.violet {
+  background: hsl(268deg, 75%, 9%);
+  color: hsl(52deg, 100%, 62%);
+}
+.violet .calc-info .switcher {
+  background-color: hsl(268deg, 71%, 12%);
+}
+.violet .calc-info .switcher .input-wrapper input[type=radio]:checked {
+  background: hsl(176deg, 100%, 44%);
+}
+.violet .calc-screen {
+  background: hsl(268deg, 71%, 12%);
+}
+.violet .calc-keypad {
+  background: hsl(268deg, 71%, 12%);
+}
+.violet .calc-keypad .button-groups .btn {
+  background: hsl(268deg, 47%, 21%);
+  box-shadow: 0 0.3rem 0.1rem hsl(290deg, 70%, 36%);
+}
+.violet .calc-keypad .button-groups .btn:hover {
+  background: hsl(268deg, 47%, 31%);
+  box-shadow: 0 0.35rem 0.1rem hsl(290deg, 70%, 41%);
+}
+.violet .calc-keypad .button-groups .btn:active {
+  background: hsl(268deg, 47%, 31%);
+  box-shadow: 0 0.2rem 0.1rem hsl(290deg, 70%, 41%);
+}
+.violet .calc-keypad .button-groups .btn-delete,
+.violet .calc-keypad .button-groups .btn-reset {
+  background: hsl(281deg, 89%, 26%);
+  box-shadow: 0 0.4rem 0.1rem hsl(290deg, 70%, 36%);
+}
+.violet .calc-keypad .button-groups .btn-delete:hover,
+.violet .calc-keypad .button-groups .btn-reset:hover {
+  background: hsl(281deg, 89%, 36%);
+  box-shadow: 0 0.35rem 0.1rem hsl(290deg, 70%, 41%);
+}
+.violet .calc-keypad .button-groups .btn-delete:active,
+.violet .calc-keypad .button-groups .btn-reset:active {
+  background: hsl(281deg, 89%, 36%);
+  box-shadow: 0 0.2rem 0.1rem hsl(290deg, 70%, 41%);
+}
+.violet .calc-keypad .button-groups .btn-result {
+  background: hsl(176deg, 100%, 44%);
+  color: hsl(198deg, 20%, 13%);
+  box-shadow: 0 0.4rem 0.1rem hsl(177deg, 92%, 70%);
+}
+.violet .calc-keypad .button-groups .btn-result:hover {
+  background: hsl(176deg, 100%, 54%);
+  box-shadow: 0 0.35rem 0.1rem hsl(177deg, 92%, 75%);
+}
+.violet .calc-keypad .button-groups .btn-result:active {
+  background: hsl(176deg, 100%, 54%);
+  box-shadow: 0 0.2rem 0.1rem hsl(177deg, 92%, 75%);
+}
+
+main {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .calc-container .calc-info {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  margin-block: 5rem 3rem;
+}
+main .calc-container .calc-info__text {
+  font-size: 2.2rem;
+}
+main .calc-container .calc-info__toggle {
+  flex-grow: 1;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+main .calc-container .calc-info__toggle figcaption {
+  font-size: 0.8rem;
+  margin-right: 2.5em;
+  text-transform: uppercase;
+}
+main .calc-container .calc-info__toggle .switcher {
+  display: flex;
+  border-radius: 2rem;
+  padding: 0.5rem;
+  border: none;
+}
+main .calc-container .calc-info__toggle .switcher .input-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+main .calc-container .calc-info__toggle .switcher .input-wrapper:nth-child(2) input[type=radio] {
+  margin-inline: 0.5rem;
+}
+main .calc-container .calc-info__toggle .switcher .input-wrapper input[type=radio] {
+  width: 1.2rem;
+  height: 1.2rem;
+  -moz-appearance: none;
+       appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
+  border-radius: 50%;
+  cursor: pointer;
+}
+main .calc-container .calc-info__toggle .switcher .input-wrapper input[type=radio]:focus-visible {
+  outline: none;
+  outline-offset: 0;
+}
+main .calc-container .calc-info__toggle .switcher .input-wrapper label {
+  position: absolute;
+  top: -2em;
+  padding: 0.2em;
+  cursor: pointer;
+}
+main .calc-container .calc-screen {
+  padding: 3rem;
+  border-radius: 0.7rem;
+  font-size: 3.8rem;
+}
+main .calc-container .calc-screen input {
+  outline: none;
+  border: none;
+  color: inherit;
+  font-size: inherit;
+  line-height: 3.8rem;
+  background: inherit;
+  width: 100%;
+  text-align: end;
+  padding: 0;
+}
+main .calc-container .calc-keypad {
+  padding: 3rem;
+  margin-top: 2rem;
+  border-radius: 0.7rem;
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  gap: 2.2rem;
+}
+main .calc-container .calc-keypad .button-groups {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.4rem;
+}
+main .calc-container .calc-keypad .button-groups:last-child {
+  grid-template-columns: 1fr 1fr;
+}
+main .calc-container .calc-keypad .button-groups button {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: inherit;
+  border: none;
+  border-radius: 0.5rem;
+  font-variant: small-caps;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4em;
+  cursor: pointer;
+}
+main .calc-container .calc-keypad .button-groups button:hover {
+  transform: translateY(0.05rem);
+}
+main .calc-container .calc-keypad .button-groups button:active {
+  transform: translateY(0.2rem);
+}
+main .calc-container .calc-keypad .button-groups .btn-delete,
+main .calc-container .calc-keypad .button-groups .btn-reset {
+  color: hsl(0deg, 0%, 100%);
+}
+
+footer {
+  margin-top: 3rem;
+}
+footer .attribution {
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 1.4em;
+}/*# sourceMappingURL=main.css.map */
