@@ -14,26 +14,28 @@
 <body>
 
     <div class="main-container blue">
+        <noscript>Your browser does not support JavaScript!</noscript>
         <main>
             <div class="calc-container">
                 <div class="calc-info">
                     <p class="calc-info__text">calc</p>
                     <form class="calc-info__toggle">
-                        <figcaption>theme</figcaption>
-                        <fieldset class="switcher">
-                            <section class="input-wrapper">
+                        <fieldset>
+                        <p class="switcher-title">theme</p>
+                        <ul class="switcher">
+                            <li class="input-wrapper">
                                 <label for="blue">1</label>
                                 <input type="radio" value="blue" name="theme" id="blue" checked="checked">
-                            </section>
-                            <section class="input-wrapper">
+                            </li>
+                            <li class="input-wrapper">
                                 <label for="light">2</label>
                                 <input type="radio" value="light" name="theme" id="light">
-                            </section>
-                            <section class="input-wrapper">
+                            </li>
+                            <li class="input-wrapper">
                                 <label for="violet">3</label>
                                 <input type="radio" value="violet" name="theme" id="violet">
-                            </section>
-                        </fieldset>
+                            </li>
+                        </ul>
                         </fieldset>
                     </form>
                 </div>
@@ -41,34 +43,34 @@
                     <input type="text" value="0" readonly="readonly" />
                 </form>
                 <div class="calc-keypad">
-                    <section class="button-groups">
+                    <div class="button-groups">
                         <button value="7" class="btn btn-number">7</button>
                         <button value="8" class="btn btn-number">8</button>
                         <button value="9" class="btn btn-number">9</button>
                         <button value="del" class="btn btn-delete">del</button>
-                    </section>
-                    <section class="button-groups">
+                    </div>
+                    <div class="button-groups">
                         <button value="4" class="btn btn-number">4</button>
                         <button value="5" class="btn btn-number">5</button>
                         <button value="6" class="btn btn-number">6</button>
                         <button value="+" class="btn btn-operator">+</button>
-                    </section>
-                    <section class="button-groups">
+                    </div>
+                    <div class="button-groups">
                         <button value="1" class="btn btn-number">1</button>
                         <button value="2" class="btn btn-number">2</button>
                         <button value="3" class="btn btn-number">3</button>
                         <button value="-" class="btn btn-operator">-</button>
-                    </section>
-                    <section class="button-groups">
+                    </div>
+                    <div class="button-groups">
                         <button value="." class="btn btn-point">.</button>
                         <button value="0" class="btn btn-number">0</button>
                         <button value="/" class="btn btn-operator">/</button>
                         <button value="x" class="btn btn-operator">x</button>
-                    </section>
-                    <section class="button-groups">
+                    </div>
+                    <div class="button-groups">
                         <button value="reset" class="btn btn-reset">reset</button>
                         <button value="=" class="btn btn-result">=</button>
-                    </section>
+                    </div>
                 </div>
             </div>
         </main>

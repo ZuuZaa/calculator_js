@@ -30,6 +30,138 @@ a {
   display: flex;
   flex-direction: column;
 }
+.main-container main {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main-container main .calc-container .calc-info {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  margin-block: 5rem 3rem;
+}
+.main-container main .calc-container .calc-info__text {
+  font-size: 2.2rem;
+}
+.main-container main .calc-container .calc-info__toggle {
+  flex-grow: 1;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.main-container main .calc-container .calc-info__toggle fieldset {
+  border: none;
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  align-items: center;
+}
+.main-container main .calc-container .calc-info__toggle fieldset .switcher-title {
+  font-size: 0.8rem;
+  margin-right: 2.5em;
+  text-transform: uppercase;
+}
+.main-container main .calc-container .calc-info__toggle fieldset .switcher {
+  display: flex;
+  border-radius: 2rem;
+  padding: 0.5rem;
+  border: none;
+}
+.main-container main .calc-container .calc-info__toggle fieldset .switcher .input-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.main-container main .calc-container .calc-info__toggle fieldset .switcher .input-wrapper:nth-child(2) input[type=radio] {
+  margin-inline: 0.5rem;
+}
+.main-container main .calc-container .calc-info__toggle fieldset .switcher .input-wrapper input[type=radio] {
+  width: 1.2rem;
+  height: 1.2rem;
+  -moz-appearance: none;
+       appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.main-container main .calc-container .calc-info__toggle fieldset .switcher .input-wrapper input[type=radio]:focus-visible {
+  outline: none;
+  outline-offset: 0;
+}
+.main-container main .calc-container .calc-info__toggle fieldset .switcher .input-wrapper label {
+  position: absolute;
+  top: -2em;
+  padding: 0.2em;
+  cursor: pointer;
+}
+.main-container main .calc-container .calc-screen {
+  padding: 3rem;
+  border-radius: 0.7rem;
+  font-size: 3.8rem;
+}
+.main-container main .calc-container .calc-screen input {
+  outline: none;
+  border: none;
+  color: inherit;
+  font-size: inherit;
+  line-height: 3.8rem;
+  background: inherit;
+  width: 100%;
+  text-align: end;
+  padding: 0;
+}
+.main-container main .calc-container .calc-keypad {
+  padding: 3rem;
+  margin-top: 2rem;
+  border-radius: 0.7rem;
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  gap: 2.2rem;
+}
+.main-container main .calc-container .calc-keypad .button-groups {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.4rem;
+}
+.main-container main .calc-container .calc-keypad .button-groups:last-child {
+  grid-template-columns: 1fr 1fr;
+}
+.main-container main .calc-container .calc-keypad .button-groups button {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: inherit;
+  border: none;
+  border-radius: 0.5rem;
+  font-variant: small-caps;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4em;
+  cursor: pointer;
+}
+.main-container main .calc-container .calc-keypad .button-groups button:hover {
+  transform: translateY(0.05rem);
+}
+.main-container main .calc-container .calc-keypad .button-groups button:active {
+  transform: translateY(0.2rem);
+}
+.main-container main .calc-container .calc-keypad .button-groups .btn-delete,
+.main-container main .calc-container .calc-keypad .button-groups .btn-reset {
+  color: hsl(0deg, 0%, 100%);
+}
+.main-container footer {
+  margin-top: 3rem;
+}
+.main-container footer .attribution {
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 1.4em;
+}
 
 .blue {
   background: hsl(222deg, 26%, 31%);
@@ -201,131 +333,4 @@ a {
 .violet .calc-keypad .button-groups .btn-result:active {
   background: hsl(176deg, 100%, 54%);
   box-shadow: 0 0.2rem 0.1rem hsl(177deg, 92%, 75%);
-}
-
-main {
-  flex-grow: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-main .calc-container .calc-info {
-  display: flex;
-  align-items: center;
-  font-weight: 700;
-  margin-block: 5rem 3rem;
-}
-main .calc-container .calc-info__text {
-  font-size: 2.2rem;
-}
-main .calc-container .calc-info__toggle {
-  flex-grow: 1;
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-main .calc-container .calc-info__toggle figcaption {
-  font-size: 0.8rem;
-  margin-right: 2.5em;
-  text-transform: uppercase;
-}
-main .calc-container .calc-info__toggle .switcher {
-  display: flex;
-  border-radius: 2rem;
-  padding: 0.5rem;
-  border: none;
-}
-main .calc-container .calc-info__toggle .switcher .input-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-}
-main .calc-container .calc-info__toggle .switcher .input-wrapper:nth-child(2) input[type=radio] {
-  margin-inline: 0.5rem;
-}
-main .calc-container .calc-info__toggle .switcher .input-wrapper input[type=radio] {
-  width: 1.2rem;
-  height: 1.2rem;
-  -moz-appearance: none;
-       appearance: none;
-  -webkit-appearance: none;
-  background: transparent;
-  border-radius: 50%;
-  cursor: pointer;
-}
-main .calc-container .calc-info__toggle .switcher .input-wrapper input[type=radio]:focus-visible {
-  outline: none;
-  outline-offset: 0;
-}
-main .calc-container .calc-info__toggle .switcher .input-wrapper label {
-  position: absolute;
-  top: -2em;
-  padding: 0.2em;
-  cursor: pointer;
-}
-main .calc-container .calc-screen {
-  padding: 3rem;
-  border-radius: 0.7rem;
-  font-size: 3.8rem;
-}
-main .calc-container .calc-screen input {
-  outline: none;
-  border: none;
-  color: inherit;
-  font-size: inherit;
-  line-height: 3.8rem;
-  background: inherit;
-  width: 100%;
-  text-align: end;
-  padding: 0;
-}
-main .calc-container .calc-keypad {
-  padding: 3rem;
-  margin-top: 2rem;
-  border-radius: 0.7rem;
-  display: grid;
-  grid-template-rows: repeat(4, 1fr);
-  gap: 2.2rem;
-}
-main .calc-container .calc-keypad .button-groups {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2.4rem;
-}
-main .calc-container .calc-keypad .button-groups:last-child {
-  grid-template-columns: 1fr 1fr;
-}
-main .calc-container .calc-keypad .button-groups button {
-  font-size: 2.8rem;
-  font-weight: 700;
-  color: inherit;
-  border: none;
-  border-radius: 0.5rem;
-  font-variant: small-caps;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.4em;
-  cursor: pointer;
-}
-main .calc-container .calc-keypad .button-groups button:hover {
-  transform: translateY(0.05rem);
-}
-main .calc-container .calc-keypad .button-groups button:active {
-  transform: translateY(0.2rem);
-}
-main .calc-container .calc-keypad .button-groups .btn-delete,
-main .calc-container .calc-keypad .button-groups .btn-reset {
-  color: hsl(0deg, 0%, 100%);
-}
-
-footer {
-  margin-top: 3rem;
-}
-footer .attribution {
-  font-size: 1.1rem;
-  text-align: center;
-  padding: 1.4em;
 }/*# sourceMappingURL=main.css.map */
