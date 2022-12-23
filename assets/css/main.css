@@ -299,7 +299,7 @@ main .calc-container .calc-keypad {
 main .calc-container .calc-keypad .button-groups {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 2.4rem;
+  gap: 2.2rem;
 }
 main .calc-container .calc-keypad .button-groups:last-child {
   grid-template-columns: 1fr 1fr;
@@ -335,4 +335,19 @@ footer .attribution {
   font-size: 1.1rem;
   text-align: center;
   padding: 1.4em;
+}
+
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 50%;
+  }
+  .main-container .calc-container {
+    padding-inline: 3rem;
+  }
+  .main-container .calc-container .calc-keypad {
+    gap: 1.5rem;
+  }
+  .main-container .calc-container .calc-keypad .button-groups {
+    gap: 1.5rem;
+  }
 }/*# sourceMappingURL=main.css.map */

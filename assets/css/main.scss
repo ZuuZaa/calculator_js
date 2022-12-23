@@ -106,6 +106,7 @@ html {
     font-size: 62.5%;
 }
 
+
 body {
     font-family: "League Spartan";
 }
@@ -350,9 +351,6 @@ a {
 
 
 
-
-
-
 // ### Main Container
 .main-container {
     width: 100%;
@@ -481,7 +479,7 @@ main {
             .button-groups {
                 display: grid;
                 grid-template-columns: repeat(4, 1fr);
-                gap: 2.4rem;
+                gap: 2.2rem;
 
                 &:last-child {
                     grid-template-columns: 1fr 1fr;
@@ -529,4 +527,24 @@ footer {
         text-align: center;
         padding: 1.4em;
     }
+}
+
+
+@media screen and (max-width: 768px) {
+    html {
+        font-size: 50%;
+    }
+    .main-container {
+        .calc-container {
+            padding-inline: 3rem;
+            .calc-keypad {
+                gap: 1.5rem;
+                .button-groups {
+                    gap: 1.5rem;
+                }
+            }
+        }
+    }
+
+
 }
