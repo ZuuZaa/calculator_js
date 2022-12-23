@@ -1,10 +1,11 @@
 "use strict"
 
-let operand; 
-let operator;
-let calc = false;
-let screenNumber = "0";
 
+let operator = "";
+let operand = 0;
+let screenNumber = "0";
+let operandIsTaken = false;
+let operatorIsTaken = false;
 
 // html elements
 const container = document.querySelector(".main-container");
@@ -20,37 +21,43 @@ const numbers = document.querySelectorAll(".btn-number");
 const operators = document.querySelectorAll(".btn-operator");
 
 // function for showing current operant on screen 
-const showScreenNumber = (number) => screen.value = number;
+const showScreenNumber = (number) => {
+
+    if (number == Infinity) {
+        screen.value = "zero division error";
+        reset();
+    } else {
+        screen.value = number;
+    }
+
+}
 
 // reset function 
 const reset = () => {
+    operator = "";
+    operand = 0;
     screenNumber = "0";
-    operand = undefined;
-    operator = undefined;
-    calc = false;
+    operandIsTaken = false;
+    operatorIsTaken = false;
 }
 
 // function calculating depend on operator 
 const calculate = () => {
-    if (!operand) {
-        operand = +screenNumber;
-    } else {
-        switch (operator) {
-            case "+":
-                operand += +screenNumber
-                break
-            case "-":
-                operand -= +screenNumber
-                break
-            case "x":
-                operand *= +screenNumber
-                break
-            case "/":
-                operand /= +screenNumber
-                break
-            default:
-                console.log("default")
-        }
+    switch (operator) {
+        case "+":
+            operand += +screenNumber
+            break
+        case "-":
+            operand -= +screenNumber
+            break
+        case "x":
+            operand *= +screenNumber
+            break
+        case "/":
+            operand /= +screenNumber
+            break
+        default:
+            console.log("operator is undefined")
     }
 }
 
@@ -62,6 +69,44 @@ const toogleTheme = () => {
             : container.classList.remove(item.value)
     })
 }
+
+// swith theme event
+themeSwitcher.addEventListener("change", toogleTheme);
+
+// numbers on click event
+numbers.forEach(btn => {
+    btn.addEventListener("click", () => {
+        operatorIsTaken = false;
+        screenNumber == "0"
+            ? screenNumber = btn.value
+            : screenNumber += btn.value;
+        screenNumber.split(".").map(str => {
+            // console.log(str)
+
+        })
+        showScreenNumber(screenNumber);
+    })
+})
+
+// operators on click event 
+operators.forEach(btn => {
+
+    btn.addEventListener("click", () => {
+
+        if (!operandIsTaken) {
+            operand = +screenNumber;
+            operandIsTaken = true;
+        }
+        if (!operatorIsTaken) {
+            operatorIsTaken = true;
+            calculate()
+            screenNumber = "0";
+        }
+
+        showScreenNumber(operand);
+        operator = btn.value;
+    })
+})
 
 // point button on click event
 pointButton.addEventListener("click", () => {
@@ -85,46 +130,16 @@ resetButton.addEventListener("click", () => {
 
 // result button on click event
 resultButton.addEventListener("click", () => {
-    if (calc) {
-        calculate();
-        showScreenNumber(operand);
-        calc = false
-        reset();
-    }
+
+    calculate();
+    showScreenNumber(operand);
+    reset();
+
 })
 
-// numbers on click event
-numbers.forEach(btn => {
-    btn.addEventListener("click", () => {
-        calc = true;
-        screenNumber == "0"
-            ? screenNumber = btn.value
-            : screenNumber += btn.value;
 
-        screenNumber.split(".").map(str => {
-            // console.log(str)
-
-        })
-
-        showScreenNumber(screenNumber);
-    })
-})
-
-// operators on click event 
-operators.forEach(btn => {
-    btn.addEventListener("click", () => {
-        if (calc) {
-            calculate();
-            screenNumber = "0";
-            showScreenNumber(operand);
-            calc = false
-        }
-        operator = btn.value;
-    })
-})
-
-// swith theme event
-themeSwitcher.addEventListener("change", toogleTheme);
 
 // show default number on screen
 showScreenNumber(screenNumber);
+
+
