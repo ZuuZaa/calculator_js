@@ -337,7 +337,7 @@ footer .attribution {
   padding: 1.4em;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 425px) {
   html {
     font-size: 50%;
   }
