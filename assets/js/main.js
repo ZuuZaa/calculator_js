@@ -27,9 +27,12 @@ const showScreenNumber = (number) => {
         screen.value = "zero division error";
         reset();
     } else {
+        number = number.toString();
+        let splitedNumber = number.split(".");
+        splitedNumber[0] = parseInt(splitedNumber[0]).toLocaleString();
+        number = splitedNumber.join(".")
         screen.value = number;
     }
-
 }
 
 // reset function 
@@ -43,6 +46,7 @@ const reset = () => {
 
 // function calculating depend on operator 
 const calculate = () => {
+    operand = +operand;
     switch (operator) {
         case "+":
             operand += +screenNumber
@@ -70,8 +74,6 @@ const toogleTheme = () => {
     })
 }
 
-// swith theme event
-themeSwitcher.addEventListener("change", toogleTheme);
 
 // numbers on click event
 numbers.forEach(btn => {
@@ -80,10 +82,6 @@ numbers.forEach(btn => {
         screenNumber == "0"
             ? screenNumber = btn.value
             : screenNumber += btn.value;
-        screenNumber.split(".").map(str => {
-            // console.log(str)
-
-        })
         showScreenNumber(screenNumber);
     })
 })
@@ -94,7 +92,7 @@ operators.forEach(btn => {
     btn.addEventListener("click", () => {
 
         if (!operandIsTaken) {
-            operand = +screenNumber;
+            operand = screenNumber;
             operandIsTaken = true;
         }
         if (!operatorIsTaken) {
@@ -138,6 +136,8 @@ resultButton.addEventListener("click", () => {
 })
 
 
+// swith theme event
+themeSwitcher.addEventListener("change", toogleTheme);
 
 // show default number on screen
 showScreenNumber(screenNumber);
